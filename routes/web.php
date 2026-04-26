@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
-use App\Http\Controllers\MenuController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,17 +15,17 @@ Route::get('blog', function () {
     return view('blog');
 });
 
-Route::get('menu', [MenuController::class, 'menu']);
-
-Route::get('idx', [MenuController::class, 'idx']);
-Route::get('example', [MenuController::class, 'example']);
-Route::get('intro', [MenuController::class, 'intro']);
-Route::get('linktree', [MenuController::class, 'linktree']);
-Route::get('news', [MenuController::class, 'news']);
-Route::get('pert5', [MenuController::class, 'pert5']);
-Route::get('responsive', [MenuController::class, 'responsive']);
-Route::get('template', [MenuController::class, 'template']);
-Route::get('biodata', [MenuController::class, 'biodata']);
-Route::get('089', [MenuController::class, 'nol89']);
-
 Route::get('dosen', [DosenController::class, 'index']);
+Route::get('biodata', [DosenController::class, 'biodata']);
+
+Route::get('menu', [DosenController::class, 'menu']);
+
+Route::get('idx', [DosenController::class, 'idx']);
+Route::get('example', [DosenController::class, 'example']);
+Route::get('intro', [DosenController::class, 'intro']);
+Route::get('linktree', [DosenController::class, 'linktree']);
+Route::get('news', [DosenController::class, 'news']);
+Route::get('pert5', [DosenController::class, 'pert5']);
+Route::get('responsive', [DosenController::class, 'responsive']);
+Route::get('template', [DosenController::class, 'template']);
+Route::get('089', [DosenController::class, 'nol89']);
