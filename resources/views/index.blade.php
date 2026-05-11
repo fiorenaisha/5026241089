@@ -1,46 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <title>5026241089</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
 </head>
 
 <body>
 
-  <div class="container">
-    <center>
-      <p>
-        <a href="pertemuan5.html" target="_blank" class="btn btn-primary">
-          Pertemuan 5
-        </a>
-      </p>
+    <h2>www.malasngoding.com</h2>
+    <h3>Data Pegawai</h3>
 
-      <p>
-        <a href="linktree.html" target="_blank" class="btn btn-primary">
-          Tugas Link Tree
-        </a>
-      </p>
+    <a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
 
-      <p>
-        <a href="" target="_blank" class="btn btn-primary">
-          Tugas Make Over akun Instagram
-        </a>
-      </p>
+    <br />
+    <br />
 
-      <p>
-        <a href="" target="_blank" class="btn btn-primary">
-          UTS
-        </a>
-      </p>
-    </center>
+    <table border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Umur</th>
+            <th>Alamat</th>
+            <th>Opsi</th>
+        </tr>
+        @foreach ($pegawai as $p)
+            <tr>
+                <td>{{ $p->pegawai_nama }}</td>
+                <td>{{ $p->pegawai_jabatan }}</td>
+                <td>{{ $p->pegawai_umur }}</td>
+                <td>{{ $p->pegawai_alamat }}</td>
+                <td>
+                    <a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
+                    |
+                    <a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+                </td>
+            </tr>
+        @endforeach
+    </table>
 
-  </div>
 
 </body>
 
