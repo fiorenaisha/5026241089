@@ -14,7 +14,7 @@
         </tr>
         @foreach ($nilaikuliah as $n)
             @php
-                // konversi nilai angka ke huruf
+            
                 if ($n->NilaiAngka <= 40) {
                     $huruf = 'D';
                 } elseif ($n->NilaiAngka <= 60) {
@@ -24,7 +24,7 @@
                 } else {
                     $huruf = 'A';
                 }
-                // hitung bobot
+
                 $bobot = $n->NilaiAngka * $n->SKS;
             @endphp
             <tr>

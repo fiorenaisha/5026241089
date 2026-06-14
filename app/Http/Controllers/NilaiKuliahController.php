@@ -3,12 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NilaiKuliahController extends Controller
 {
-    // Menampilkan halaman form tambah (tidak butuh data DB)
+    public function index()
+    {
+        $nilaikuliah = DB::table('nilaikuliah')->paginate(10);
+        return view('indexNilaiKuliah', ['nilaikuliah' => $nilaikuliah]);
+    }
+
     public function tambah()
     {
         return view('tambah_nilaikuliah');
+    }
+
+    public function store(Request $request)
+    {
+        DB::table('nilaikuliah')->insert([
+            'NRP'         => $request->NRP,
+            'NilaiAngka'  => $request->NilaiAngka,
+            'SKS'         => $request->SKS,
+        ]);
+        return redirect('/nilaikuliah');
     }
 }

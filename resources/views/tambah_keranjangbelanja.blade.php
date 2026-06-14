@@ -1,34 +1,34 @@
 @extends('template')
-@section('title', 'Tambah Keranjang Belanja')
+@section('title', 'Tambah Nilai Kuliah')
 @section('konten')
-    <a href="/keranjangbelanja" class="btn btn-secondary mb-4">Kembali</a>
+    <a href="/nilaikuliah" class="btn btn-secondary mb-4">Kembali</a>
 
     <div class="card">
         <div class="card-header">
-            Form Tambah Data Keranjang Belanja
+            Form Tambah Data Nilai Kuliah
         </div>
         <div class="card-body">
-            <form action="/keranjangbelanja/store" method="post">
+            <form action="/nilaikuliah/store" method="post">
                 {{ csrf_field() }}
 
                 <div class="row mb-3">
-                    <label for="KodeBarang" class="col-sm-2 col-form-label">Kode Barang</label>
+                    <label for="NRP" class="col-sm-2 col-form-label">NRP</label>
                     <div class="col-sm-10">
-                        <input type="number" name="KodeBarang" id="KodeBarang" class="form-control" required>
+                        <input type="text" name="NRP" id="NRP" class="form-control" required>
                     </div>
                 </div>
 
                 <div class="row mb-3">
-                    <label for="Jumlah" class="col-sm-2 col-form-label">Jumlah Pembelian</label>
+                    <label for="NilaiAngka" class="col-sm-2 col-form-label">Nilai Angka</label>
                     <div class="col-sm-10">
-                        <input type="number" name="Jumlah" id="Jumlah" class="form-control" required>
+                        <input type="number" name="NilaiAngka" id="NilaiAngka" class="form-control" required>
                     </div>
                 </div>
 
                 <div class="row mb-3">
-                    <label for="Harga" class="col-sm-2 col-form-label">Harga per item</label>
+                    <label for="SKS" class="col-sm-2 col-form-label">SKS</label>
                     <div class="col-sm-10">
-                        <input type="number" name="Harga" id="Harga" class="form-control" required>
+                        <input type="number" name="SKS" id="SKS" class="form-control" required>
                     </div>
                 </div>
 

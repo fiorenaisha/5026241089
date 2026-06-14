@@ -3,10 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\PenggarisController;
-use App\Http\Controllers\PenggarisDBController;
 use App\Http\Controllers\NilaiKuliahController;
-use App\Http\Controllers\NilaiKuliahDBController;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
 
@@ -59,22 +58,30 @@ Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
 
+//siswa
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
 //penggaris
-Route::get('/penggaris', [PenggarisDBController::class, 'indexPenggaris']);
+Route::get('/penggaris', [PenggarisController::class, 'indexPenggaris']);
 Route::get('/penggaris/tambah_penggaris', [PenggarisController::class, 'tambah_penggaris']);
-Route::post('/penggaris/store_penggaris', [PenggarisDBController::class, 'store_penggaris']);
-Route::get('/penggaris/edit_penggaris/{id}', [PenggarisDBController::class, 'edit_penggaris']);
-Route::post('/penggaris/update_penggaris', [PenggarisDBController::class, 'update_penggaris']);
-Route::get('/penggaris/hapus_penggaris/{id}', [PenggarisDBController::class, 'hapus_penggaris']);
-Route::get('/penggaris/cari_penggaris', [PenggarisDBController::class, 'cari_penggaris']);
+Route::post('/penggaris/store_penggaris', [PenggarisController::class, 'store_penggaris']);
+Route::get('/penggaris/edit_penggaris/{id}', [PenggarisController::class, 'edit_penggaris']);
+Route::post('/penggaris/update_penggaris', [PenggarisController::class, 'update_penggaris']);
+Route::get('/penggaris/hapus_penggaris/{id}', [PenggarisController::class, 'hapus_penggaris']);
+Route::get('/penggaris/cari_penggaris', [PenggarisController::class, 'cari_penggaris']);
 
 // nilaikuliah
-Route::get('/nilaikuliah', [NilaiKuliahDBController::class, 'index']);
+Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index']);
 Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah']);
-Route::post('/nilaikuliah/store', [NilaiKuliahDBController::class, 'store']);
+Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store']);
 
 // keranjangbelanja
-Route::get('/keranjangbelanja', [KeranjangBelanjaDBController::class, 'index']);
+Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'index']);
 Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah']);
-Route::post('/keranjangbelanja/store', [KeranjangBelanjaDBController::class, 'store']);
-Route::get('/keranjangbelanja/hapus/{id}', [KeranjangBelanjaDBController::class, 'hapus']);
+Route::post('/keranjangbelanja/store', [KeranjangBelanjaController::class, 'store']);
+Route::get('/keranjangbelanja/hapus/{id}', [KeranjangBelanjaController::class, 'hapus']);
