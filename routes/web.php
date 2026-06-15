@@ -8,6 +8,7 @@ use App\Http\Controllers\PenggarisController;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
+use App\Http\Controllers\NilaiPesertaController;
 
 
 Route::get('/', function () {
@@ -85,3 +86,8 @@ Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'index']);
 Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah']);
 Route::post('/keranjangbelanja/store', [KeranjangBelanjaController::class, 'store']);
 Route::get('/keranjangbelanja/hapus/{id}', [KeranjangBelanjaController::class, 'hapus']);
+
+//nilai peserta
+Route::get('/eas', [NilaiPesertaController::class, 'index']);
+Route::get('/eas/tambah', [NilaiPesertaController::class, 'tambah']);
+Route::post('/eas/store', [NilaiPesertaController::class, 'store']);

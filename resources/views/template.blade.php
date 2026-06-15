@@ -32,7 +32,7 @@
                         <a class="nav-link" href="/keranjangbelanja">D4</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">EAS</a>
+                        <a class="nav-link" href="/eas">EAS</a>
                     </li>
                 </ul>
             </div>
