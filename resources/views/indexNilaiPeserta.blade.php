@@ -16,7 +16,7 @@
             @php
                 $ratarata = ($n->nilaiteori + $n->nilaipraktek) / 2;
 
-                if ($n->ratarata < 75) {
+                if ($ratarata < 75) {
                     $status = 'Gagal';
                 } else {
                     $status = 'Lulus';
